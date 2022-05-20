@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.atguigu.spring5.User"></bean>
+
+<!--    <bean id="book" class="com.atguigu.spring5.Book">-->
+<!--        <property name="name" value="时间简史"></property>-->
+<!--        <property name="price" value="100"></property>-->
+<!--    </bean>-->
+
+    <bean id="order" class="com.atguigu.spring5.Order">
+        <constructor-arg name="name" value="java从入门到放弃"></constructor-arg>
+        <constructor-arg name="price" value="1000"></constructor-arg>
+    </bean>
+
+    <bean id="books" class="com.atguigu.spring5.Book">
+<!--        <property name="name">-->
+<!--            <null/>-->
+<!--        </property>-->
+        <property name="name">
+            <value> <![CDATA[《南京》]]> </value>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    设置初始化方法和销毁方法-->
+    <bean id="stu" class="com.atguigu2.spring5.Stu" init-method="initStu" destroy-method="destoryStu">
+        <property name="name" value="小智"></property>
+        <property name="course" ref="course"></property>
+    </bean>
+    <bean id="course" class="com.atguigu2.spring5.Course">
+        <property name="cname" value="男神养成计划"></property>
+    </bean>
+<!--创建后置处理器对象,对整个xml中的所有bean都生效-->
+    <bean id="beanPost" class="com.atguigu2.spring5.beanPostProcessor"></bean>
+
+<!--    自动注入-->
+    <bean id="user" class="com.atguigu2.spring5.User" autowire="byName">
+    <property name="name" value="小智" ></property>
+    </bean>
+
+    <bean id="book"  class="com.atguigu2.spring5.Book">
+        <property name="bName" value="如何成为男神"></property>
+    </bean>
+
+</beans>
